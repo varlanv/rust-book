@@ -1,10 +1,10 @@
 fn main() {
-    fahrenheit_to_celsuius(0.0);
-    fibonacci(1);
+    println!("{}", fahrenheit_to_celsuius(98.0));
+    println!("{}", fibonacci(20));
 }
 
 fn fahrenheit_to_celsuius(fahrenheit: f32) -> f32 {
-    return (fahrenheit - 32.0) * (5.0 / 9.0);
+    (fahrenheit - 32.0) * (5.0 / 9.0)
 }
 
 fn fibonacci(n: u64) -> u64 {
@@ -18,7 +18,7 @@ fn fibonacci(n: u64) -> u64 {
         res = res + prev;
         prev = current;
     }
-    return res;
+    res
 }
 
 #[cfg(test)]
@@ -31,7 +31,6 @@ mod test_fahrenheit_to_celsuius {
 
         assert_eq!(format!("{:.4}", actual), "-17.7778");
     }
-
 
     #[test]
     fn should_convert_fahrenheit_to_celsius() {
